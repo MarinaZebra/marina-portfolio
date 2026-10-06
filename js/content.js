@@ -17,7 +17,7 @@ window.CONTENT = {
   projects: [
     {
       id: 1,
-      title: "Climate-informed forest restoration in Tenerife",
+      title: "Mapping species suitability for climate-resilient forest restoration",
       summary: "This project assesses the environmental suitability of native monteverde species to support forest restoration in Tenerife, particularly in landscapes affected by wildfire.",
       cover: { src: "tenerife-map", w: 1367, h: 1135, alt: "Morella faya suitability estimation before cold penalty, mapped over Tenerife in a blue-to-red colour scale" },
       figures: {
@@ -56,26 +56,26 @@ window.CONTENT = {
     },
     {
       id: 3,
-      title: "National habitat mapping: analysis of lotic habitats",
+      title: "Mapping of terrestrial habitats: improving spatial information at the national level",
       summary: "This project develops consistent mapping of Spain’s terrestrial and coastal habitats at 1:25,000 scale to support biodiversity conservation, environmental reporting and territorial planning.",
       cover: { src: "p3-correlation-matrix.jpg", w: 1100, h: 860, alt: "Correlation matrix of water chemistry variables shown as a triangular heat map from red to blue", contain: true },
       figures: {
         logo: { src: "natura2000", w: 250, h: 250, alt: "Natura 2000 logo", caption: "Habitat types are related to the Habitats Directive (Natura 2000) classification.", contain: true },
-        variables: { src: "p3-river-variables.png", w: 481, h: 480, alt: "Table of the main physical parameters for each type of lotic ecosystem, in Spanish", caption: "Main physical parameters for each type of lotic ecosystem (table in Spanish)." },
-        correlation: { src: "p3-correlation-matrix.jpg", w: 1100, h: 860, alt: "Triangular correlation matrix between temperature, dissolved oxygen, conductivity, salinity, turbidity, alkalinity and pH, with labels in Spanish", caption: "Correlation matrix of water chemistry variables (labels in Spanish)." },
+        variables: { src: "p3-river-variables.png", w: 481, h: 480, alt: "Table of the main physical parameters for each type of lotic ecosystem", caption: "Main physical parameters for each type of lotic ecosystem." },
+        correlation: { src: "p3-correlation-matrix.jpg", w: 1100, h: 860, alt: "Triangular correlation matrix between temperature, dissolved oxygen, conductivity, salinity, turbidity, alkalinity and pH", caption: "Correlation matrix of water chemistry variables (labels in Spanish)." },
         groups: { src: "p3-group-similarities.png", w: 555, h: 300, alt: "Diagram linking Water Framework Directive river types 8, 11, 12, 25 and 26 with Habitats Directive types 3220, 3230 and 3240, in Spanish", caption: "Links between Water Framework Directive river types and Habitats Directive habitat types (in Spanish)." }
       },
       sections: [
         { key: "Description", figure: "logo", text: "This project develops consistent mapping of Spain’s terrestrial and coastal habitats at 1:25,000 scale to support biodiversity conservation, environmental reporting and territorial planning. It brings together national and regional information within a common habitat classification framework, addressing differences in mapping scales, interpretation and source datasets. My contribution focused on lotic habitats, including rivers and streams, with particular attention to the physicochemical characteristics of water. This work contributed to the wider effort to characterise aquatic environments within a harmonised national habitat framework." },
         { key: "Input Data", figure: "variables", text: "Spanish Forest Map (MFE), regional habitat maps, national spatial datasets, hydrographic information, scientific literature and field observations. My analysis focused on water chemistry variables, including alkalinity, salinity and dissolved oxygen." },
-        { key: "Methodology", figure: "correlation", text: "The wider project harmonised habitat information using the updated Spanish Habitat Reference List and its relationships with EUNIS and Habitats Directive types. Habitat assignments combined existing cartography, spatial integration, photointerpretation, expert judgement and field observations. For lotic habitats, the national hydrographic network provided the spatial reference for organising habitat information. My contribution included statistical analysis of physicochemical datasets in R, using correlation and similarity matrices to examine relationships among water chemistry variables. These analyses supported the interpretation of environmental characteristics relevant to river and stream habitats within the broader mapping process." },
+        { key: "Methodology", figure: "correlation", text: "The wider project harmonised habitat information using the updated Spanish Habitat Reference List and its relationships with EUNIS and Habitats Directive types. Habitat assignments combined existing cartography, spatial integration, photointerpretation, expert judgement and field observations. For lotic habitats, the national hydrographic network provided the spatial reference for organising habitat information. My contribution included statistical analysis of physicochemical datasets in R, using correlation and similarity matrices to examine relationships among water chemistry variables across different lotic habitats and classification groups, and to identify potential linkages between classifications where applicable. These analyses supported the interpretation of environmental characteristics relevant to river and stream habitats within the broader mapping process." },
         { key: "Tools", figure: "correlation", text: "GIS mapping, spatial overlay, geodatabases, ETL workflows and statistical analysis in R. The wider project envisaged a transition to a normalised PostGIS database." },
         { key: "Results", figure: "groups", text: "The wider project produced an updated habitat reference list and advanced national habitat mapping, supported by methodological reports and a map viewer." }
       ]
     },
     {
       id: 4,
-      title: "Carbon storage and conservation assessment in Paraguay",
+      title: "Carbon Markets and the Transformation of Forest Management",
       summary: "This project assesses the carbon storage capacity and ecological significance of two native forest ecosystems threatened by harvesting.",
       cover: { src: "p4-carbon-sink.png", w: 505, h: 437, alt: "Diagram of carbon flows between the atmosphere and an aquifer, a power plant and a forest", contain: true },
       figures: {
@@ -85,7 +85,7 @@ window.CONTENT = {
       sections: [
         { key: "Description", figure: "sink", text: "This project assesses the carbon storage capacity and ecological significance of two native forest ecosystems threatened by harvesting. The report supports a conservation initiative intended to protect existing forest carbon stocks and preserve biodiversity in a fragmented landscape. It combines forest inventory information with an assessment of environmental conditions, species conservation value and landscape connectivity. The reporting approach draws on ISO 14064-2 to organise the comparison between a forest-clearance baseline and a proposed conservation scenario." },
         { key: "Input Data", figure: "histogram", text: "Forest inventories, fieldwork, tree species observations, forest boundaries, elevation and climate information, conservation-status records and scientific literature." },
-        { key: "Methodology", figure: "sink", text: "The assessment first characterised the forest’s location, environmental setting, vegetation and ecological importance using inventory records and supporting spatial and documentary sources. It compiled the reported above-ground carbon stock. Aerial imagery was interpreted to assess the forest’s position relative to surrounding native forest patches and plantations. The report then compared a baseline scenario involving forest clearance and conversion with a project scenario centred on conservation. This comparison considered potential carbon release, habitat loss and changes in landscape connectivity, providing a technical basis for the proposed protection initiative." },
+        { key: "Methodology", figure: "sink", text: "The assessment first characterised the forest’s location, environmental setting, vegetation and ecological importance using inventory records and supporting spatial and documentary sources. It compiled the reported above-ground carbon stock. Aerial imagery was interpreted to assess the forest’s position relative to surrounding native forest patches. The report then compared a baseline scenario involving forest clearance and conversion with a project scenario centred on conservation. This comparison considered potential carbon release, habitat loss and changes in landscape connectivity, providing a technical basis for the proposed protection initiative." },
         { key: "Tools", figure: "histogram", text: "Forest inventory assessment, spatial mapping, allometric equations, carbon modelling, conservation-status review and greenhouse gas reporting guided by ISO 14064-2." },
         { key: "Results", figure: "histogram", text: "The report estimated above-ground carbon stocks of CO₂ and documented tree species. It highlighted the forest’s value for protecting carbon stocks, conserving threatened flora and maintaining connectivity between native forest patches." }
       ]
@@ -94,14 +94,14 @@ window.CONTENT = {
 
   /* Career timeline, in chronological order. kind: "study" | "work" */
   career: [
-    { period: "2018 – 2023", title: "Bachelor's degree in Natural Environmental Engineering", kind: "study", tone: "#4d6b1e" },
-    { period: "2021 – 2022", title: "Erasmus Exchange NTNU", kind: "study", tone: "#7f9f8a" },
-    { period: "2022", title: "Urban Tree Management Intern", kind: "work", tone: "#a9a82b" },
-    { period: "2023", title: "TATU Project – Water and Environment Programme Assistant", detail: "Cooperation scholarship", kind: "work", tone: "#7a4f3c" },
-    { period: "2023 – 2024", title: "Environmental Consulting Assistant", kind: "work", tone: "#0fae63" },
-    { period: "2024 – 2026", title: "Master in Environmental Management of Mountain Areas", kind: "study", tone: "#9ad85b" },
-    { period: "2025 – 2026", title: "Environmental and Spatial Data Technician", kind: "work", tone: "#16c24a" },
-    { period: "2026", title: "Forest Restoration Technician", kind: "work", tone: "#c6d400" }
+    { period: "2018 – 2023", title: "Bachelor's degree in Natural Environmental Engineering, Spain", kind: "study", tone: "#4d6b1e" },
+    { period: "2021 – 2022", title: "Erasmus Exchange NTNU, Norway", kind: "study", tone: "#7f9f8a" },
+    { period: "2022", title: "Urban Tree Management Intern, Spain", kind: "work", tone: "#a9a82b" },
+    { period: "2023", title: "TATU Project – Water and Environment Programme Assistant, Tanzania", detail: "Cooperation scholarship", kind: "work", tone: "#7a4f3c" },
+    { period: "2023 – 2024", title: "Environmental Consulting Assistant, Spain", kind: "work", tone: "#0fae63" },
+    { period: "2024 – 2026", title: "Master in Environmental Management of Mountain Areas, Italy & Austria", kind: "study", tone: "#9ad85b" },
+    { period: "2025 – 2026", title: "Environmental and Spatial Data Technician, Spain", kind: "work", tone: "#16c24a" },
+    { period: "2026", title: "Forest Restoration Technician, Spain", kind: "work", tone: "#c6d400" }
   ],
 
   technical: {
@@ -110,7 +110,7 @@ window.CONTENT = {
     skillsLabel: "Technical Skills",
     skills: "Raster and vector data processing, multitemporal analysis, spatial databases, quality control and cartographic communication.",
     toolsLabel: "Tools",
-    tools: ["QGIS", "ArcGIS", "Python", "R", "rasterio", "GeoPandas", "Shapely", "GDAL/OGR", "PyProj", "xarray", "rioxarray", "terra", "sf"],
+    tools: ["QGIS", "ArcGIS", "GRASS", "Python", "R", "rasterio", "GeoPandas", "Shapely", "GDAL/OGR", "xarray", "rioxarray", "terra", "sf"],
     toolsNote: "Alongside workflows using satellite remote sensing imagery."
   },
 
