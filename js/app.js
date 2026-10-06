@@ -11,7 +11,7 @@
     });
   }
   // Italicise scientific names wherever they appear
-  var SPECIES = ["Phytophthora cinnamomi", "Circus pygargus", "Phengaris arion", "P. arion", "Myrmica"];
+  var SPECIES = ["Morella faya", "Laurus novocanariensis", "Arbutus canariensis", "Ilex canariensis", "Phytophthora cinnamomi", "Circus pygargus", "Phengaris arion", "P. arion", "Myrmica"];
   function sci(s) {
     var out = esc(s);
     SPECIES.forEach(function (n) { out = out.split(n).join("<em>" + n + "</em>"); });
@@ -42,16 +42,14 @@
   about.innerHTML = C.about.split(" ").map(function (w) { return '<span class="w">' + esc(w) + "</span>"; }).join(" ");
   about.setAttribute("aria-label", C.about);
   var aboutWords = about.querySelectorAll(".w");
+  $("#about-photo").innerHTML = imgTag(C.aboutPhoto);
 
   // Project cards
   var leafIcon = '<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 56V28M32 40c-8 0-14-6-14-16 10 0 14 6 14 16zm0-6c0-10 6-18 18-18 0 12-8 18-18 18z" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   $("#project-cards").innerHTML = C.projects.map(function (p, i) {
     var media = p.cover
       ? '<div class="card-media' + (p.cover.contain ? " contain" : "") + '">' + imgTag(p.cover, { small: true }) + "</div>"
-      : p.coverStat
-        ? '<div class="card-media stat"><p><span class="stat-value">' + esc(p.coverStat.value) + '</span> <span class="stat-unit">' +
-          esc(p.coverStat.unit) + '</span><span class="stat-label">' + esc(p.coverStat.label) + "</span></p></div>"
-        : '<div class="card-media empty">' + leafIcon + "</div>";
+      : '<div class="card-media empty">' + leafIcon + "</div>";
     return '<article class="card" id="card-project-' + p.id + '">' + media +
       '<div class="card-body"><span class="card-num">Project ' + String(i + 1).padStart(2, "0") + "</span>" +
       "<h3>" + sci(p.title) + "</h3><p>" + sci(p.summary) + "</p>" +
@@ -62,7 +60,7 @@
   $("#article-cards").innerHTML = C.articles.map(function (a) {
     var excerpt = a.paragraphs[0].length > 190 ? a.paragraphs[0].slice(0, a.paragraphs[0].lastIndexOf(" ", 185)) + "…" : a.paragraphs[0];
     return '<article class="card" id="card-article-' + a.id + '"><div class="card-media">' + imgTag(a.image, { small: true }) + "</div>" +
-      '<div class="card-body"><h3>' + esc(a.title) + "</h3><p>" + sci(excerpt) + "</p>" +
+      '<div class="card-body"><h3>' + esc(a.title) + "</h3>" + '<span class="card-credit">' + esc(C.blogCredit) + "</span><p>" + sci(excerpt) + "</p>" +
       '<a class="more" href="#/article/' + a.id + '" aria-label="Read article: ' + esc(a.title) + '">Read article</a></div></article>';
   }).join("");
 
@@ -115,7 +113,10 @@
   var storyObserver = null;
 
   function figureHTML(f, key) {
-    return '<figure data-fig="' + key + '"' + (f.contain ? ' class="contain"' : "") + ">" + imgTag(f) +
+    // Never upscale beyond natural width (keeps small charts and tables crisp); link to full size
+    var img = imgTag(f).replace("<img ", '<img style="max-width:min(100%,' + f.w + 'px)" ');
+    return '<figure data-fig="' + key + '"' + (f.contain ? ' class="contain"' : "") + ">" +
+      (f.contain ? img : '<a href="' + src(f) + '" target="_blank" rel="noopener" aria-label="Open full-size image: ' + esc(f.alt) + ' (new tab)">' + img + "</a>") +
       "<figcaption>" + sci(f.caption) + "</figcaption></figure>";
   }
 
@@ -125,8 +126,7 @@
     var idx = C.projects.indexOf(p);
     var prev = C.projects[idx - 1], next = C.projects[idx + 1];
     var steps = p.sections.map(function (s) {
-      return '<section class="step" data-figure="' + (s.figure || "") + '"><h2>' + esc(s.key) + "</h2><p>" + sci(s.text) + "</p>" +
-        (s.mine ? '<span class="mine">Includes my contribution</span>' : "") + "</section>";
+      return '<section class="step" data-figure="' + (s.figure || "") + '"><h2>' + esc(s.key) + "</h2><p>" + sci(s.text) + "</p></section>";
     }).join("");
     var stage = hasFig
       ? '<aside class="stage" aria-label="Project figures"><div class="stage-frame">' +
@@ -160,7 +160,8 @@
     detail.innerHTML =
       '<header class="detail-head"><div class="wrap">' +
       '<a class="back" href="#blog" data-back>Back to portfolio</a>' +
-      '<p class="eyebrow">Blog</p><h1 tabindex="-1">' + esc(a.title) + "</h1></div></header>" +
+      '<p class="eyebrow">Blog</p><h1 tabindex="-1">' + esc(a.title) + "</h1>" +
+      '<p class="byline">' + esc(C.blogCredit) + "</p></div></header>" +
       '<div class="wrap"><div class="article-hero-wrap" style="padding-top:2.5rem"><figure class="article-figure">' + imgTag(a.image, { eager: true }) +
       "<figcaption>" + sci(a.caption) + "</figcaption></figure></div>" +
       '<article class="article">' + body + (extra ? '<div class="article-gallery">' + extra + "</div>" : "") + "</article>" +

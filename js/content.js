@@ -5,81 +5,89 @@ window.CONTENT = {
   tagline: "From Environmental Data to Evidence-Based Decisions",
   linkedin: "https://www.linkedin.com/in/marina-pérez-álvarez-83385b227",
 
+  aboutPhoto: { src: "marina-portrait.jpg", w: 800, h: 735, alt: "Portrait of Marina Pérez smiling in front of relief maps and a hand-drawn mountain panorama" },
+  blogCredit: "Text and image by Marina Pérez",
+
   about:
     "Natural Environmental Engineer specialising in Forestry, with a Master's degree in Environmental Management of Mountain Areas. Experienced in forest ecology, GIS, remote sensing, spatial modelling and habitat mapping. Passionate about using spatial data analysis and statistical modelling to transform complex environmental data into actionable insights that support evidence-based decision-making.",
 
   /* Projects: sections shown only when present. `figure` on a section is the image that
-     stays pinned beside it while that section is on screen (scrollytelling). */
+     stays pinned beside it while that section is on screen (scrollytelling).
+     The card summary is the first sentence of the Description. */
   projects: [
     {
       id: 1,
-      title: "Mapping species suitability for climate-resilient forest restoration",
-      summary:
-        "Environmental suitability of native monteverde species in Tenerife, comparing historical conditions with mid-century climate projections to guide species selection and planting locations.",
-      cover: { src: "tenerife-map", w: 1367, h: 1135, alt: "Map of Tenerife produced in the suitability analysis, in a blue-to-red colour scale" },
+      title: "Climate-informed forest restoration in Tenerife",
+      summary: "This project assesses the environmental suitability of native monteverde species to support forest restoration in Tenerife, particularly in landscapes affected by wildfire.",
+      cover: { src: "tenerife-map", w: 1367, h: 1135, alt: "Morella faya suitability estimation before cold penalty, mapped over Tenerife in a blue-to-red colour scale" },
       figures: {
-        map: { src: "tenerife-map", w: 1367, h: 1135, alt: "Map of Tenerife produced in the suitability analysis, in a blue-to-red colour scale", caption: "Map of Tenerife from the suitability analysis." },
-        workflow: { src: "p1-workflow", w: 800, h: 816, alt: "Workflow: BIOTA presence records; filter for reliable, high-precision occurrences; historical niche extraction; climate variables from SICMA Canarias; topographic variables (elevation and northness); weighted suitability index; historical suitability map; future suitability map (SSP2-4.5, 2041–2070)", caption: "Analysis workflow, from occurrence records to the future suitability map (SSP2-4.5, 2041–2070)." }
+        watering: { src: "p1-watering.jpg", w: 736, h: 426, alt: "A man watering plantings carried out after the Arafo wildfire", caption: "Watering the plantings carried out after the Arafo wildfire." },
+        records: { src: "p1-species-records.jpg", w: 602, h: 380, alt: "Map of Tenerife with species occurrence records shown as grid cells across the north of the island", caption: "Species occurrence records in Tenerife." },
+        workflow: { src: "p1-workflow", w: 800, h: 816, alt: "Workflow: BIOTA presence records; filter for reliable, high-precision occurrences; historical niche extraction; climate variables from SICMA Canarias; topographic variables (elevation and northness); weighted suitability index; historical suitability map; future suitability map (SSP2-4.5, 2041–2070)", caption: "Analysis workflow, from occurrence records to the future suitability map (SSP2-4.5, 2041–2070)." },
+        map: { src: "tenerife-map", w: 1367, h: 1135, alt: "Morella faya suitability estimation before cold penalty, mapped over Tenerife in a blue-to-red colour scale", caption: "Morella faya suitability estimation before cold penalty" }
       },
       sections: [
-        { key: "Description", figure: "map", text: "Assessment of the environmental suitability of native monteverde species to support forest restoration in Tenerife. The analysis compares historical conditions with mid-century climate projections to guide species selection and planting locations." },
-        { key: "Objective", figure: "map", text: "Identify suitable areas for native forest species and assess how their suitability may change under future climate conditions." },
-        { key: "Input Data", figure: "map", text: "Filtered species occurrence records from BIOTA Canarias, historical and projected climate data from SICMA, and elevation and aspect derived from GRAFCAN terrain data." },
-        { key: "Methodology", figure: "workflow", text: "Define empirical environmental niches using occurrence-based percentiles. Combine climatic and terrain scores into a weighted suitability index, apply a winter cold penalty, and compare historical and future maps." },
-        { key: "Tools", figure: "workflow", text: "GIS spatial analysis, raster processing, terrain analysis, percentile-based scoring and weighted multicriteria evaluation." }
+        { key: "Description", figure: "watering", text: "This project assesses the environmental suitability of native monteverde species to support forest restoration in Tenerife, particularly in landscapes affected by wildfire. It addresses the need to select species that are compatible with both historical conditions and the climate expected during the coming decades under different climate change scenarios. The approach was initially applied to Morella faya, with occurrence datasets also prepared for Laurus novocanariensis, Arbutus canariensis and Ilex canariensis. The resulting maps provide a practical basis for incorporating climate adaptation into species selection and planting decisions." },
+        { key: "Input Data", figure: "records", text: "Reliable occurrence records from BIOTA Canarias, filtered by confidence and spatial precision; six climatic variables from SICMA Canarias; and elevation and slope orientation derived from GRAFCAN terrain data. Historical conditions cover 1985–2014, while future projections represent 2041–2070 under SSP2-4.5, using the median of the available climate models." },
+        { key: "Methodology", figure: "workflow", text: "Species occurrences were organised into 500 × 500 m cells, whose centroids were used to extract climatic and terrain values. These observations defined empirical environmental niches through percentile-based reference ranges. Each variable was transformed into a continuous suitability score according to whether low values, high values or departures from an intermediate range were considered unfavourable. Scores were combined into a weighted index from 0 to 100, prioritising water availability while also accounting for temperature, heatwaves, elevation and north-facing exposure. An additional winter cold penalty reduced suitability in high-mountain areas where frost constraints were insufficiently represented by the initial index. The historical reference ranges were then applied to future environmental conditions to enable consistent comparison between periods." },
+        { key: "Tools", figure: "workflow", text: "GIS spatial analysis, raster processing, terrain analysis, environmental data extraction and weighted multicriteria evaluation." },
+        { key: "Results", figure: "map", text: "Historical and projected suitability maps identifying favourable areas and potential shifts in environmental compatibility. The index supports restoration planning alongside expert judgement and local site assessment; it represents relative suitability rather than a probability of establishment." }
       ]
     },
     {
       id: 2,
-      title: "Monitoring the spatial distribution of holm oak mortality in relation to spread patterns of Phytophthora cinnamomi and associated terrain-derived mechanisms",
-      summary:
-        "Thesis on the spatial distribution of holm oak mortality in a Mediterranean dehesa affected by Phytophthora cinnamomi, and its relationship with terrain and potential water movement pathways.",
+      title: "Spatial analysis of holm oak mortality in a Mediterranean dehesa",
+      summary: "This master’s thesis investigates the spatial distribution of holm oak mortality in a Mediterranean dehesa affected by Phytophthora cinnamomi.",
       cover: { src: "p2-orthophoto", w: 661, h: 468, alt: "Aerial orthophoto of scattered holm oak trees in a dehesa, dated 2010" },
       figures: {
         ortho: { src: "p2-orthophoto", w: 661, h: 468, alt: "Aerial orthophoto of scattered holm oak trees in a dehesa, dated 2010", caption: "Orthophoto of the dehesa (2010)." },
+        slope: { src: "p2-slope", w: 1600, h: 1131, alt: "Slope raster in a blue-green-yellow colour scale, legend from 0 to 169.43", caption: "Terrain slope raster (legend range 0–169.43)." },
+        classification: { src: "p2-classification.jpg", w: 616, h: 398, alt: "Orthophoto in which tree crowns are separated from the surrounding ground, shaded red", caption: "Image classification separating tree crowns from the surrounding ground." },
         exgr: { src: "p2-exgr", w: 1400, h: 990, alt: "Tree crowns highlighted in warm colours over a blue background in a vegetation index raster labelled ExGR = ExG − ExR", caption: "Vegetation index raster (ExGR = ExG − ExR) highlighting tree crowns." },
-        slope: { src: "p2-slope", w: 1600, h: 1131, alt: "Slope raster in a blue-green-yellow colour scale, legend from 0 to 169.43", caption: "Terrain slope raster (legend range 0–169.43)." }
+        flow: { src: "p2-water-flow.jpg", w: 602, h: 352, alt: "Terrain raster showing branching water flow lines in blue over a yellow and orange surface", caption: "Terrain-derived water flow pathways." }
       },
       sections: [
-        { key: "Description", figure: "ortho", text: "This thesis investigates the spatial distribution of holm oak mortality in a Mediterranean dehesa affected by Phytophthora cinnamomi, exploring its relationship with terrain and potential water movement pathways." },
-        { key: "Input Data", figure: "ortho", text: "High-resolution PNOA orthophotos spanning 12 years, a dehesa study-area mask, terrain-derived variables, and distances to mapped mortality clusters and roads." },
-        { key: "Methodology", figure: "exgr", text: "Map mortality from multitemporal orthophotos and analyse its spatial patterns. Use binomial logistic regression to assess associations with topography, wetness indices and proximity variables." },
-        { key: "Tools", figure: "slope", text: "GIS spatial analysis, orthophoto interpretation, terrain modelling, spatial clustering and statistical modelling using a binomial generalised linear model." },
-        { key: "Results", figure: "slope", text: "The models showed limited discriminatory performance (AUC: 0.596–0.616), with higher topographic wetness associated with increased mortality occurrence. The findings provide exploratory evidence and highlight the need for field validation." }
+        { key: "Description", figure: "ortho", text: "This master’s thesis investigates the spatial distribution of holm oak mortality in a Mediterranean dehesa affected by Phytophthora cinnamomi. Using high-resolution orthophotos spanning 12 years, it examines mortality patterns in relation to topography, potential water movement pathways and proximity to previously mapped mortality clusters and roads. The study explores whether terrain-derived indicators can help explain where mortality occurs and provide a reproducible basis for further investigation. Its interpretation remains exploratory, recognising that spatial associations alone cannot establish the mechanisms responsible for tree decline." },
+        { key: "Input Data", figure: "slope", text: "Multitemporal PNOA orthophotos, a dehesa study-area mask, mapped mortality locations, terrain-derived variables and distances to mortality clusters and roads. Predictors included aspect, slope, plan curvature, topographic wetness index (TWI), proximity to the hydrological network, distance to tracks, and distance to the nearest disease foci." },
+        { key: "Methodology", figure: "classification", text: "Mortality was assessed using image classification to identify tree crowns and their condition. A Boolean condition was then used to determine the year in which each tree crown disappeared, allowing mortality to be tracked over time. Spatial clustering was used to describe concentrations of mortality, while GIS analysis generated terrain and proximity variables representing potential environmental associations. A binomial generalised linear model was used to examine mortality presence in relation to these predictors. Aspect was represented through sine and cosine components to account for its circular nature. Model discrimination was assessed using the area under the receiver operating characteristic curve, and estimated associations were interpreted in terms of their ecological plausibility and methodological limitations. Mortality clusters were treated as spatial features rather than confirmed infection sources." },
+        { key: "Tools", figure: "exgr", text: "GIS, GRASS and raster analysis, orthophoto interpretation, image classification, terrain modelling, DBSCAN spatial clustering and binomial logistic regression." },
+        { key: "Results", figure: "flow", text: "Models showed limited discriminatory performance, with AUC values of 0.596–0.616. Higher topographic wetness was associated with increased mortality occurrence. The findings support further investigation and field validation before predictive or wider management use." }
       ]
     },
     {
       id: 3,
-      title: "Mapping of terrestrial habitats: improving spatial information at the national level (project 22bdes905)",
-      summary:
-        "National mapping of Spain's terrestrial and coastal habitats at 1:25,000 for biodiversity conservation and environmental planning. My contribution focused on lotic habitats: rivers and streams.",
-      cover: { src: "natura2000", w: 250, h: 250, alt: "Natura 2000 logo", contain: true },
+      title: "National habitat mapping: analysis of lotic habitats",
+      summary: "This project develops consistent mapping of Spain’s terrestrial and coastal habitats at 1:25,000 scale to support biodiversity conservation, environmental reporting and territorial planning.",
+      cover: { src: "p3-correlation-matrix.jpg", w: 1100, h: 860, alt: "Correlation matrix of water chemistry variables shown as a triangular heat map from red to blue", contain: true },
       figures: {
-        logo: { src: "natura2000", w: 250, h: 250, alt: "Natura 2000 logo", caption: "Habitat types are related to the Habitats Directive (Natura 2000) classification.", contain: true }
+        logo: { src: "natura2000", w: 250, h: 250, alt: "Natura 2000 logo", caption: "Habitat types are related to the Habitats Directive (Natura 2000) classification.", contain: true },
+        variables: { src: "p3-river-variables.png", w: 481, h: 480, alt: "Table of the main physical parameters for each type of lotic ecosystem, in Spanish", caption: "Main physical parameters for each type of lotic ecosystem (table in Spanish)." },
+        correlation: { src: "p3-correlation-matrix.jpg", w: 1100, h: 860, alt: "Triangular correlation matrix between temperature, dissolved oxygen, conductivity, salinity, turbidity, alkalinity and pH, with labels in Spanish", caption: "Correlation matrix of water chemistry variables (labels in Spanish)." },
+        groups: { src: "p3-group-similarities.png", w: 555, h: 300, alt: "Diagram linking Water Framework Directive river types 8, 11, 12, 25 and 26 with Habitats Directive types 3220, 3230 and 3240, in Spanish", caption: "Links between Water Framework Directive river types and Habitats Directive habitat types (in Spanish)." }
       },
       sections: [
-        { key: "Description", figure: "logo", text: "National mapping of Spain's terrestrial and coastal habitats at a scale of 1:25,000, providing consistent spatial information for biodiversity conservation and environmental planning. My contribution focused on lotic habitats, including rivers and streams." },
-        { key: "Input Data", figure: "logo", text: "Spanish Forest Map (MFE), regional habitat maps, national spatial datasets, hydrographic information, scientific literature and field observations. My work focused on water chemistry variables, including alkalinity, salinity and dissolved oxygen.", mine: true },
-        { key: "Methodology", figure: "logo", text: "Harmonise habitat classifications using the updated Spanish Habitat Reference List and its relationships with EUNIS and Habitats Directive types. Assign habitats through spatial integration, photointerpretation, expert judgement and field surveys. My contribution included correlation and similarity matrix analyses to explore relationships among water chemistry variables.", mine: true },
-        { key: "Tools", figure: "logo", text: "GIS mapping and digitisation, spatial overlay, geodatabases and ETL workflows, alongside statistical analysis in R. The wider project envisaged a transition to a normalised PostGIS database." },
-        { key: "Results", figure: "logo", text: "An updated habitat reference list and national habitat mapping under development, supported by methodological reports and a map viewer. Further fieldwork and methodological refinements were needed for several habitat groups." }
+        { key: "Description", figure: "logo", text: "This project develops consistent mapping of Spain’s terrestrial and coastal habitats at 1:25,000 scale to support biodiversity conservation, environmental reporting and territorial planning. It brings together national and regional information within a common habitat classification framework, addressing differences in mapping scales, interpretation and source datasets. My contribution focused on lotic habitats, including rivers and streams, with particular attention to the physicochemical characteristics of water. This work contributed to the wider effort to characterise aquatic environments within a harmonised national habitat framework." },
+        { key: "Input Data", figure: "variables", text: "Spanish Forest Map (MFE), regional habitat maps, national spatial datasets, hydrographic information, scientific literature and field observations. My analysis focused on water chemistry variables, including alkalinity, salinity and dissolved oxygen." },
+        { key: "Methodology", figure: "correlation", text: "The wider project harmonised habitat information using the updated Spanish Habitat Reference List and its relationships with EUNIS and Habitats Directive types. Habitat assignments combined existing cartography, spatial integration, photointerpretation, expert judgement and field observations. For lotic habitats, the national hydrographic network provided the spatial reference for organising habitat information. My contribution included statistical analysis of physicochemical datasets in R, using correlation and similarity matrices to examine relationships among water chemistry variables. These analyses supported the interpretation of environmental characteristics relevant to river and stream habitats within the broader mapping process." },
+        { key: "Tools", figure: "correlation", text: "GIS mapping, spatial overlay, geodatabases, ETL workflows and statistical analysis in R. The wider project envisaged a transition to a normalised PostGIS database." },
+        { key: "Results", figure: "groups", text: "The wider project produced an updated habitat reference list and advanced national habitat mapping, supported by methodological reports and a map viewer." }
       ]
     },
     {
       id: 4,
-      title: "Carbon Markets and the Transformation of Forest Management",
-      summary:
-        "Assessment of carbon storage and ecological value in a native forest, supporting conservation through a reporting framework based on ISO 14064-2.",
-      cover: null,
-      /* No image provided yet: the card shows a key figure instead */
-      coverStat: { value: "≈102,234", unit: "t CO₂", label: "Estimated above-ground carbon stocks" },
-      figures: {},
+      title: "Carbon storage and conservation assessment in Paraguay",
+      summary: "This project assesses the carbon storage capacity and ecological significance of two native forest ecosystems threatened by harvesting.",
+      cover: { src: "p4-carbon-sink.png", w: 505, h: 437, alt: "Diagram of carbon flows between the atmosphere and an aquifer, a power plant and a forest", contain: true },
+      figures: {
+        sink: { src: "p4-carbon-sink.png", w: 505, h: 437, alt: "Diagram of carbon flows between the atmosphere and an aquifer, a power plant and a forest: positive flow as emission, neutral flow as transfer and negative flow as removal", caption: "Carbon sinks, reservoirs and sources: emission, transfer and removal flows." },
+        histogram: { src: "p4-carbon-histogram.png", w: 380, h: 276, alt: "Histogram with density curve of carbon stock in tCO2e per hectare, with a vertical line at 220", caption: "Distribution of carbon stock per hectare (tCO₂e/ha)." }
+      },
       sections: [
-        { key: "Description", text: "Assessment of carbon storage and ecological value in a native forest. The project supports forest conservation through a reporting framework based on ISO 14064-2." },
-        { key: "Input Data", text: "Forest inventory records collected in October 2024, species observations, forest boundaries, elevation and climate data, aerial imagery, conservation-status information and scientific literature." },
-        { key: "Methodology", text: "Characterise the forest's environmental conditions, carbon stocks and biodiversity. Compare a baseline scenario of forest clearance with a conservation scenario, considering potential emissions and impacts on habitat connectivity." },
-        { key: "Tools", text: "Forest inventory assessment, Google Earth imagery interpretation, spatial mapping, literature review and project-level greenhouse gas reporting guided by ISO 14064-2." },
-        { key: "Results", text: "The report estimated above-ground carbon stocks equivalent to approximately 102,234 tonnes of CO₂ and documented more than 36 tree species. It highlighted the forest's importance for carbon protection, threatened flora and landscape connectivity." }
+        { key: "Description", figure: "sink", text: "This project assesses the carbon storage capacity and ecological significance of two native forest ecosystems threatened by harvesting. The report supports a conservation initiative intended to protect existing forest carbon stocks and preserve biodiversity in a fragmented landscape. It combines forest inventory information with an assessment of environmental conditions, species conservation value and landscape connectivity. The reporting approach draws on ISO 14064-2 to organise the comparison between a forest-clearance baseline and a proposed conservation scenario." },
+        { key: "Input Data", figure: "histogram", text: "Forest inventories, fieldwork, tree species observations, forest boundaries, elevation and climate information, conservation-status records and scientific literature." },
+        { key: "Methodology", figure: "sink", text: "The assessment first characterised the forest’s location, environmental setting, vegetation and ecological importance using inventory records and supporting spatial and documentary sources. It compiled the reported above-ground carbon stock. Aerial imagery was interpreted to assess the forest’s position relative to surrounding native forest patches and plantations. The report then compared a baseline scenario involving forest clearance and conversion with a project scenario centred on conservation. This comparison considered potential carbon release, habitat loss and changes in landscape connectivity, providing a technical basis for the proposed protection initiative." },
+        { key: "Tools", figure: "histogram", text: "Forest inventory assessment, spatial mapping, allometric equations, carbon modelling, conservation-status review and greenhouse gas reporting guided by ISO 14064-2." },
+        { key: "Results", figure: "histogram", text: "The report estimated above-ground carbon stocks of CO₂ and documented tree species. It highlighted the forest’s value for protecting carbon stocks, conserving threatened flora and maintaining connectivity between native forest patches." }
       ]
     }
   ],
