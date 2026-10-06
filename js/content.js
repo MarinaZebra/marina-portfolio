@@ -58,11 +58,10 @@ window.CONTENT = {
       id: 3,
       title: "Mapping of terrestrial habitats: improving spatial information at the national level",
       summary: "This project develops consistent mapping of Spain’s terrestrial and coastal habitats at 1:25,000 scale to support biodiversity conservation, environmental reporting and territorial planning.",
-      cover: { src: "p3-correlation-matrix.jpg", w: 1100, h: 860, alt: "Correlation matrix of water chemistry variables shown as a triangular heat map from red to blue", contain: true },
+      cover: { src: "p3-group-similarities.png", w: 1100, h: 860, alt: "Correlation matrix of water chemistry variables shown as a triangular heat map from red to blue", contain: true },
       figures: {
         logo: { src: "natura2000", w: 250, h: 250, alt: "Natura 2000 logo", caption: "Habitat types are related to the Habitats Directive (Natura 2000) classification.", contain: true },
         variables: { src: "p3-river-variables.png", w: 481, h: 480, alt: "Table of the main physical parameters for each type of lotic ecosystem", caption: "Main physical parameters for each type of lotic ecosystem." },
-        correlation: { src: "p3-correlation-matrix.jpg", w: 1100, h: 860, alt: "Triangular correlation matrix between temperature, dissolved oxygen, conductivity, salinity, turbidity, alkalinity and pH", caption: "Correlation matrix of water chemistry variables (labels in Spanish)." },
         groups: { src: "p3-group-similarities.png", w: 555, h: 300, alt: "Diagram linking Water Framework Directive river types 8, 11, 12, 25 and 26 with Habitats Directive types 3220, 3230 and 3240, in Spanish", caption: "Links between Water Framework Directive river types and Habitats Directive habitat types (in Spanish)." }
       },
       sections: [
